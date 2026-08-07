@@ -1,0 +1,956 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-06-18T20:19:32.291Z",
+  "mode": "apply",
+  "root": "D:/00_Cerveau_IA/Projet",
+  "previousSource": null,
+  "summary": {
+    "total": 14,
+    "previousTotal": 0,
+    "newProjects": 0,
+    "removedProjects": 0,
+    "movedProjects": 0,
+    "unregisteredProjects": 0,
+    "archiveOnlyProjects": 1
+  },
+  "projects": [
+    {
+      "id": "00-orchestrateur",
+      "name": "00_ORCHESTRATEUR",
+      "path": "D:/00_Cerveau_IA/Projet/00_ORCHESTRATEUR",
+      "relativePath": "00_ORCHESTRATEUR",
+      "category": "tools",
+      "status": "PRIVATE_INTERNAL",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "PRIVATE_INTERNAL",
+      "packageName": "cerveau-ia-project-orchestrator",
+      "stack": [
+        "Node.js"
+      ],
+      "scripts": [
+        "agents:sync",
+        "architecture",
+        "audit:compliance",
+        "audit:initial",
+        "backup:prepare",
+        "backup:status",
+        "check",
+        "cleanup:archive",
+        "cleanup:audit",
+        "daily",
+        "dashboard",
+        "detect:stack",
+        "docs:check",
+        "expected:check",
+        "fiches",
+        "git:changes",
+        "git:guard",
+        "github:prepare",
+        "github:readme",
+        "github:sync",
+        "github:verify-repos",
+        "hostinger:check",
+        "memory:central",
+        "memory:project",
+        "monthly",
+        "optimization",
+        "plan:coverage",
+        "projects:inventory",
+        "publication:check",
+        "registry:check",
+        "repair:functionality",
+        "safety:check",
+        "scan",
+        "screenshots",
+        "screenshots:check",
+        "security",
+        "site-ma-methode",
+        "site:check",
+        "site:render-check",
+        "skills:check",
+        "skills:install",
+        "status:check",
+        "subagent:dispatch",
+        "subagent:merge",
+        "subagent:mistral",
+        "subagent:qwen",
+        "subagents",
+        "subagents:check",
+        "thumbnails",
+        "thumbnails:import-ai",
+        "verify:functionality",
+        "weekly"
+      ],
+      "git": {
+        "hasGit": true,
+        "dirty": true,
+        "status": "## main...origin/main |  M .project-orchestrator.json |  M AUDIT_SECURITE.json |  M AUDIT_SECURITE.md |  M CHANGELOG_FR.md |  M FICHE_PROJET.md |  M config/projects.registry.json |  M dashboard/README.md |  M dashboard/public/app.js |  M dashboard/public/index.html |  M dashboard/public/styles.css |  M dashboard/server.mjs |  M package.json |  M scripts/lib/project-content.mjs |  M scripts/subagent-mistral.mjs |  M scripts/subagent-qwen.mjs |  M scripts/validate-subagent-safety.mjs | ?? Ouvrir_Orchestrateur.cmd | ?? Ouvrir_Orchestrateur_Silencieux.vbs | ?? Ouvrir_Workflow_Studio_Python.cmd | ?? config/orchestrator.tasks.json | ?? scripts/archive-project-inventory.mjs | ?? scripts/launch-orchestrator-dashboard.ps1 | ?? scripts/lib/subagent-api-utils.mjs | ?? scripts/migrate-orchestrator-tasks-store.mjs | ?? workflow_app/"
+      },
+      "fileSummary": {
+        "scannedFiles": 2814,
+        "skippedDirectories": [
+          ".git",
+          ".playwright-mcp"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".example": 1,
+          "(none)": 1,
+          ".json": 1259,
+          ".md": 1406,
+          ".zip": 13,
+          ".txt": 13,
+          ".mjs": 93,
+          ".html": 9,
+          ".js": 2,
+          ".css": 1,
+          ".ps1": 7,
+          ".cmd": 2,
+          ".vbs": 1,
+          ".png": 4,
+          ".py": 2
+        }
+      },
+      "directoryMtime": "2026-06-18T20:01:45.464Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "01-nas",
+      "name": "01_NAS",
+      "path": "D:/00_Cerveau_IA/Projet/01_NAS",
+      "relativePath": "01_NAS",
+      "category": "tools",
+      "status": "PRIVATE_INTERNAL",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "PRIVATE_INTERNAL",
+      "packageName": null,
+      "stack": [
+        "NAS/Documentation"
+      ],
+      "scripts": [],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 43,
+        "skippedDirectories": [],
+        "truncated": false,
+        "extensionCounts": {
+          ".json": 8,
+          ".md": 13,
+          ".txt": 4,
+          ".docx": 1,
+          ".yml": 1,
+          ".gz": 1,
+          ".sh": 14,
+          ".zip": 1
+        }
+      },
+      "directoryMtime": "2026-06-15T22:36:05.520Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "01-site-ma-methode",
+      "name": "01_SITE_MA_METHODE",
+      "path": "D:/00_Cerveau_IA/Projet/01_SITE_MA_METHODE",
+      "relativePath": "01_SITE_MA_METHODE",
+      "category": "design",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "ai-video-webgl-competences-clean",
+      "stack": [
+        "Vite/Dev server",
+        "Node.js"
+      ],
+      "scripts": [
+        "check",
+        "dev",
+        "dev:iphone",
+        "qa:iphone",
+        "qa:iphone:headed",
+        "serve",
+        "start"
+      ],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 337,
+        "skippedDirectories": [
+          ".playwright-cli",
+          ".playwright-mcp"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".example": 1,
+          "(none)": 1,
+          ".json": 58,
+          ".zip": 18,
+          ".php": 1,
+          ".md": 28,
+          ".png": 112,
+          ".webp": 81,
+          ".html": 1,
+          ".cjs": 1,
+          ".js": 5,
+          ".mp4": 8,
+          ".jpg": 5,
+          ".svg": 14,
+          ".mjs": 2,
+          ".css": 1
+        }
+      },
+      "directoryMtime": "2026-06-18T19:54:22.457Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "03-codex-mistral-subagent-skill",
+      "name": "03_codex-mistral-subagent-skill",
+      "path": "D:/00_Cerveau_IA/Projet/03_codex-mistral-subagent-skill",
+      "relativePath": "03_codex-mistral-subagent-skill",
+      "category": "ai",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "codex-mistral-subagent-skill",
+      "stack": [
+        "Node.js"
+      ],
+      "scripts": [
+        "check:helper",
+        "check:models",
+        "validate"
+      ],
+      "git": {
+        "hasGit": true,
+        "dirty": true,
+        "status": "## main...origin/main | ?? .project-orchestrator.json | ?? AUDIT_ARCHITECTURE.json | ?? AUDIT_ARCHITECTURE.md | ?? AUDIT_NETTOYAGE.json | ?? AUDIT_NETTOYAGE.md | ?? AUDIT_OPTIMISATION.json | ?? AUDIT_OPTIMISATION.md | ?? AUDIT_ORCHESTRATEUR_INITIAL.json | ?? AUDIT_ORCHESTRATEUR_INITIAL.md | ?? AUDIT_SECURITE.json | ?? AUDIT_SECURITE.md | ?? CHANGELOG_FR.md | ?? FICHE_PROJET.md | ?? INSTALLATION_FR.md | ?? PREPARATION_GITHUB.json | ?? PREPARATION_GITHUB.md | ?? RAPPORT_FONCTIONNALITE.json | ?? RAPPORT_FONCTIONNALITE.md | ?? RAPPORT_REPARATION_FONCTIONNALITE.json | ?? RAPPORT_REPARATION_FONCTIONNALITE.md | ?? docs/daily-tests/evidence/2026-06-18-image-regeneration-priority-expected.json | ?? docs/daily-tests/evidence/2026-06-18-mistral-medium-3.5-image-regeneration-priority-report-draft.json"
+      },
+      "fileSummary": {
+        "scannedFiles": 616,
+        "skippedDirectories": [
+          ".git"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".yml": 4,
+          ".md": 139,
+          "(none)": 1,
+          ".json": 361,
+          ".txt": 91,
+          ".patch": 1,
+          ".png": 1,
+          ".mjs": 17,
+          ".yaml": 1
+        }
+      },
+      "directoryMtime": "2026-06-16T21:17:09.505Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "05-generateur-image-c2r",
+      "name": "05_Generateur image C2R",
+      "path": "D:/00_Cerveau_IA/Projet/05_Generateur image C2R",
+      "relativePath": "05_Generateur image C2R",
+      "category": "ai",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "generateur-image-c2r",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Node.js"
+      ],
+      "scripts": [
+        "build",
+        "check",
+        "compat:check",
+        "dev",
+        "manifest:refresh",
+        "start"
+      ],
+      "git": {
+        "hasGit": true,
+        "dirty": true,
+        "status": "## main | ?? .project-orchestrator.json | ?? AUDIT_ARCHITECTURE.json | ?? AUDIT_ARCHITECTURE.md | ?? AUDIT_NETTOYAGE.json | ?? AUDIT_NETTOYAGE.md | ?? AUDIT_OPTIMISATION.json | ?? AUDIT_OPTIMISATION.md | ?? AUDIT_SECURITE.json | ?? AUDIT_SECURITE.md | ?? CHANGELOG_FR.md | ?? FICHE_PROJET.md | ?? INSTALLATION_FR.md | ?? PREPARATION_GITHUB.json | ?? PREPARATION_GITHUB.md | ?? RAPPORT_FONCTIONNALITE.json | ?? RAPPORT_FONCTIONNALITE.md | ?? RAPPORT_REPARATION_FONCTIONNALITE.json | ?? RAPPORT_REPARATION_FONCTIONNALITE.md | ?? docs/captures/"
+      },
+      "fileSummary": {
+        "scannedFiles": 54,
+        "skippedDirectories": [
+          ".git",
+          "dist",
+          "node_modules"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".example": 1,
+          "(none)": 3,
+          ".json": 14,
+          ".md": 15,
+          ".png": 2,
+          ".webp": 1,
+          ".jsonl": 1,
+          ".log": 2,
+          ".mjs": 9,
+          ".ps1": 1,
+          ".jsx": 2,
+          ".svg": 1,
+          ".html": 1,
+          ".css": 1
+        }
+      },
+      "directoryMtime": "2026-06-15T22:36:05.824Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "05-orbe-skyia",
+      "name": "05_Orbe_skyia",
+      "path": "D:/00_Cerveau_IA/Projet/05_Orbe_skyia",
+      "relativePath": "05_Orbe_skyia",
+      "category": "ai",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "UNKNOWN",
+      "functionalityStatus": "UNKNOWN",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "skyia:-judgment-protocol-27.11.2025",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Three.js/WebGL",
+        "Node.js"
+      ],
+      "scripts": [
+        "build",
+        "check",
+        "dev",
+        "preview",
+        "start",
+        "test"
+      ],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 995,
+        "skippedDirectories": [
+          ".playwright-mcp",
+          "dist",
+          "node_modules",
+          "_archive/2026-06-16-nettoyage-hostinger-mistral/functions/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260617_222609/client/dist",
+          "_deploy/orbe_skyia_express_appjs_20260617_222609/client/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260617_222609/dist",
+          "_deploy/orbe_skyia_express_appjs_20260617_222609/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260617_224354/client/dist",
+          "_deploy/orbe_skyia_express_appjs_20260617_224354/client/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260617_224354/dist",
+          "_deploy/orbe_skyia_express_appjs_20260617_231238/client/dist",
+          "_deploy/orbe_skyia_express_appjs_20260617_231238/client/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260617_231238/dist",
+          "_deploy/orbe_skyia_express_appjs_20260617_232903/client/dist",
+          "_deploy/orbe_skyia_express_appjs_20260617_232903/client/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260617_232903/dist",
+          "_deploy/orbe_skyia_express_appjs_20260618_190358/client/dist",
+          "_deploy/orbe_skyia_express_appjs_20260618_190358/client/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260618_190358/dist",
+          "_deploy/orbe_skyia_express_appjs_20260618_192030/client/dist",
+          "_deploy/orbe_skyia_express_appjs_20260618_192030/client/node_modules",
+          "_deploy/orbe_skyia_express_appjs_20260618_192030/dist",
+          "_deploy/orbe_skyia_node_prebuilt_20260617_013710/dist"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".html": 22,
+          ".md": 53,
+          "(none)": 14,
+          ".json": 109,
+          ".tsx": 353,
+          ".txt": 11,
+          ".ts": 311,
+          ".css": 16,
+          ".cjs": 45,
+          ".js": 41,
+          ".cache": 1,
+          ".log": 1,
+          ".rules": 2,
+          ".xlsx": 2,
+          ".bat": 1,
+          ".zip": 13
+        }
+      },
+      "directoryMtime": "2026-06-17T06:24:39.968Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "05-skyia",
+      "name": "05_skyia",
+      "path": "D:/00_Cerveau_IA/Projet/05_skyia",
+      "relativePath": "05_skyia",
+      "category": "ai",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "skyia:-judgment-protocol-27.11.2025",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Node.js"
+      ],
+      "scripts": [
+        "bench:models",
+        "build",
+        "dev",
+        "preview",
+        "test"
+      ],
+      "git": {
+        "hasGit": true,
+        "dirty": true,
+        "status": "## master | ?? .project-orchestrator.json | ?? AUDIT_ARCHITECTURE.json | ?? AUDIT_ARCHITECTURE.md | ?? AUDIT_NETTOYAGE.json | ?? AUDIT_NETTOYAGE.md | ?? AUDIT_OPTIMISATION.json | ?? AUDIT_OPTIMISATION.md | ?? AUDIT_SECURITE.json | ?? AUDIT_SECURITE.md | ?? CHANGELOG_FR.md | ?? FICHE_PROJET.md | ?? INSTALLATION_FR.md | ?? PREPARATION_GITHUB.json | ?? PREPARATION_GITHUB.md | ?? RAPPORT_FONCTIONNALITE.json | ?? RAPPORT_FONCTIONNALITE.md | ?? RAPPORT_REPARATION_FONCTIONNALITE.json | ?? RAPPORT_REPARATION_FONCTIONNALITE.md"
+      },
+      "fileSummary": {
+        "scannedFiles": 96,
+        "skippedDirectories": [
+          ".git",
+          ".playwright-mcp",
+          "dist",
+          "node_modules"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          "(none)": 3,
+          ".json": 17,
+          ".php": 7,
+          ".tsx": 17,
+          ".md": 24,
+          ".sql": 1,
+          ".zip": 3,
+          ".css": 1,
+          ".html": 1,
+          ".err": 1,
+          ".out": 1,
+          ".cjs": 2,
+          ".svg": 1,
+          ".mjs": 2,
+          ".ts": 14,
+          ".js": 1
+        }
+      },
+      "directoryMtime": "2026-06-15T22:36:05.865Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "10-garden-inn",
+      "name": "10_garden-inn",
+      "path": "D:/00_Cerveau_IA/Projet/10_garden-inn",
+      "relativePath": "10_garden-inn",
+      "category": "design",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "garden-inn-app",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Node.js"
+      ],
+      "scripts": [
+        "build",
+        "dev",
+        "preview"
+      ],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 98,
+        "skippedDirectories": [
+          "dist",
+          "node_modules"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".local": 1,
+          "(none)": 1,
+          ".json": 15,
+          ".tsx": 20,
+          ".md": 12,
+          ".ts": 7,
+          ".zip": 1,
+          ".css": 1,
+          ".html": 1,
+          ".mjs": 1,
+          ".js": 3,
+          ".jpg": 3,
+          ".webp": 32
+        }
+      },
+      "directoryMtime": "2026-06-15T22:36:05.873Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "10-harmos-calc",
+      "name": "10_harmos-calc",
+      "path": "D:/00_Cerveau_IA/Projet/10_harmos-calc",
+      "relativePath": "10_harmos-calc",
+      "category": "tools",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "react-example",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Node.js"
+      ],
+      "scripts": [
+        "build",
+        "clean",
+        "dev",
+        "lint",
+        "preview"
+      ],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 32,
+        "skippedDirectories": [
+          "dist",
+          "node_modules"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".example": 1,
+          "(none)": 1,
+          ".json": 12,
+          ".md": 11,
+          ".html": 1,
+          ".tsx": 2,
+          ".css": 1,
+          ".ts": 3
+        }
+      },
+      "directoryMtime": "2026-06-15T22:36:05.875Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "20-chess-3d-ultimate",
+      "name": "20_chess-3d-ultimate",
+      "path": "D:/00_Cerveau_IA/Projet/20_chess-3d-ultimate",
+      "relativePath": "20_chess-3d-ultimate",
+      "category": "tools",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "chess-3d-ultimate",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Three.js/WebGL",
+        "Node.js"
+      ],
+      "scripts": [
+        "build",
+        "dev",
+        "preview"
+      ],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 42,
+        "skippedDirectories": [
+          "node_modules"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".local": 1,
+          "(none)": 1,
+          ".json": 13,
+          ".tsx": 6,
+          ".md": 12,
+          ".ts": 7,
+          ".html": 1,
+          ".txt": 1
+        }
+      },
+      "directoryMtime": "2026-06-15T22:36:05.878Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "20-jeu3d",
+      "name": "20_jeu3d",
+      "path": "D:/00_Cerveau_IA/Projet/20_jeu3d",
+      "relativePath": "20_jeu3d",
+      "category": "tools",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "jeu3d",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Three.js/WebGL",
+        "Node.js"
+      ],
+      "scripts": [
+        "build",
+        "dev",
+        "lint",
+        "preview"
+      ],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 49,
+        "skippedDirectories": [
+          "dist",
+          "node_modules"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          "(none)": 2,
+          ".example": 1,
+          ".json": 13,
+          ".md": 11,
+          ".js": 1,
+          ".html": 1,
+          ".mp3": 1,
+          ".svg": 2,
+          ".css": 2,
+          ".tsx": 9,
+          ".ts": 6
+        }
+      },
+      "directoryMtime": "2026-06-15T22:36:05.881Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "20-morphostyle",
+      "name": "20_morphostyle",
+      "path": "D:/00_Cerveau_IA/Projet/20_morphostyle",
+      "relativePath": "20_morphostyle",
+      "category": "design",
+      "status": "NEEDS_DOCUMENTATION",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "NEEDS_DOCUMENTATION",
+      "packageName": "morphostyle-ai",
+      "stack": [
+        "Vite/Dev server",
+        "React",
+        "Node.js"
+      ],
+      "scripts": [
+        "build",
+        "dev",
+        "dev:api",
+        "lint",
+        "preview",
+        "start"
+      ],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 3644,
+        "skippedDirectories": [
+          ".playwright-mcp",
+          "dist",
+          "node_modules"
+        ],
+        "truncated": false,
+        "extensionCounts": {
+          ".local": 1,
+          "(none)": 2803,
+          ".json": 176,
+          ".tsx": 4,
+          ".md": 11,
+          ".css": 2,
+          ".html": 3,
+          ".png": 119,
+          ".log": 148,
+          ".dat": 13,
+          ".pma": 18,
+          ".baj": 13,
+          ".baf": 13,
+          ".bf": 13,
+          ".db": 34,
+          ".db-journal": 21,
+          ".pb": 59,
+          ".db-wal": 13,
+          ".journal": 13,
+          ".bdic": 5,
+          ".tflite": 50,
+          ".gz": 5,
+          ".txt": 6,
+          ".model": 5,
+          ".store": 33,
+          ".32_13426256989102549": 1,
+          ".4_13426256989108119": 1,
+          ".32_13426256989109754": 1,
+          ".4_13426256989109689": 1,
+          ".32_13426256989109181": 1,
+          ".32_13426256989089664": 1,
+          ".4_13426256989101405": 1,
+          ".4_13426256989096454": 1,
+          ".4_13426256988935265": 1,
+          ".4_13426256989113078": 1,
+          ".4_13426256989100417": 1,
+          ".4_13426256989098576": 1,
+          ".32_13426271309882901": 1,
+          ".4_13426285648982714": 1,
+          ".4_13426287451020085": 1,
+          ".32_13426271309890064": 1,
+          ".4_13426271309890007": 1,
+          ".32_13426271309889517": 1,
+          ".32_13426271309869874": 1,
+          ".4_13426285648982140": 1,
+          ".4_13426287451019441": 1,
+          ".4_13426285648980945": 1,
+          ".4_13426287451018073": 1,
+          ".4_13426285648953802": 1,
+          ".4_13426287450995494": 1,
+          ".4_13426282080910362": 1,
+          ".4_13426285648983200": 1,
+          ".4_13426276668606673": 1,
+          ".4_13426278485594756": 1,
+          ".4_13426285648981497": 1,
+          ".4_13426287451018690": 1,
+          ".js": 7,
+          ".gif": 1,
+          ".bin": 1,
+          ".32_13426204287362085": 1,
+          ".4_13426204287372488": 1,
+          ".32_13426204287375935": 1,
+          ".4_13426204287375795": 1,
+          ".32_13426204287374492": 1,
+          ".32_13426204287345835": 1,
+          ".4_13426204287360166": 1,
+          ".4_13426204287349234": 1,
+          ".4_13426204287057517": 1,
+          ".4_13426204287381796": 1,
+          ".4_13426204287357347": 1,
+          ".4_13426204287353406": 1,
+          ".webp": 2,
+          ".jpg": 2,
+          ".svg": 1,
+          ".mjs": 3,
+          ".ts": 3
+        }
+      },
+      "directoryMtime": "2026-06-16T22:59:02.937Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "99-archive",
+      "name": "99_Archive",
+      "path": "D:/00_Cerveau_IA/Projet/99_Archive",
+      "relativePath": "99_Archive",
+      "category": "archive",
+      "status": "ARCHIVE_ONLY",
+      "securityStatus": "UNKNOWN",
+      "functionalityStatus": "UNKNOWN",
+      "publicationStatus": "ARCHIVE_ONLY",
+      "packageName": null,
+      "stack": [
+        "Dossier projet"
+      ],
+      "scripts": [],
+      "git": {
+        "hasGit": false,
+        "dirty": false,
+        "status": "NO_GIT"
+      },
+      "fileSummary": {
+        "scannedFiles": 4978,
+        "skippedDirectories": [
+          "AI_VIDEO_WEBGL_COMPETENCES/.git",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN/.git",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/.playwright-cli",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/.playwright-mcp",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_015121/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_021218/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_022536/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_025027/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_030219/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_031317/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_032100/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_032659/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CLEAN_RESTE_20260614_005053/output/cv_static_20260608_032922/dist",
+          "AI_VIDEO_WEBGL_COMPETENCES_CONCEPTION_PUBLIC/.git",
+          "CV_SITE/.next",
+          "CV_SITE/CV_WEBGL_CUBE_VIDEO_TEST/dist",
+          "CV_SITE/CV_WEBGL_CUBE_VIDEO_TEST/node_modules",
+          "CV_SITE/CV_WEBGL_CUBE_VOID_SITE/dist",
+          "CV_SITE/CV_WEBGL_CUBE_VOID_SITE/node_modules",
+          "CV_SITE/CV_WEBGL_SCROLL_VIDEO_ALPHA_SITE/.git",
+          "CV_SITE/CV_WEBGL_SCROLL_VIDEO_ALPHA_SITE/dist",
+          "CV_SITE/CV_WEBGL_SCROLL_VIDEO_ALPHA_SITE/node_modules"
+        ],
+        "truncated": true,
+        "extensionCounts": {
+          "(none)": 7,
+          ".yml": 6,
+          ".md": 125,
+          ".json": 215,
+          ".mjs": 8,
+          ".cff": 1,
+          ".yaml": 2,
+          ".jpg": 2776,
+          ".mp4": 173,
+          ".ps1": 16,
+          ".zip": 28,
+          ".php": 17,
+          ".png": 1382,
+          ".html": 24,
+          ".pdf": 4,
+          ".jsonl": 1,
+          ".txt": 22,
+          ".js": 39,
+          ".css": 19,
+          ".log": 80,
+          ".pid": 1,
+          ".blend": 2,
+          ".mtlx": 2,
+          ".tres": 2,
+          ".usdc": 2,
+          ".avif": 1,
+          ".py": 4,
+          ".svg": 2,
+          ".webp": 11,
+          ".jsx": 6
+        }
+      },
+      "directoryMtime": "2026-06-15T22:30:18.375Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    },
+    {
+      "id": "competance-recherche-emploie",
+      "name": "Competance_Recherche_emploie",
+      "path": "D:/00_Cerveau_IA/Projet/Competance_Recherche_emploie",
+      "relativePath": "Competance_Recherche_emploie",
+      "category": "tools",
+      "status": "PRIVATE_INTERNAL",
+      "securityStatus": "KNOWN_REPORT",
+      "functionalityStatus": "KNOWN_REPORT",
+      "publicationStatus": "PRIVATE_INTERNAL",
+      "packageName": null,
+      "stack": [
+        "Dossier projet"
+      ],
+      "scripts": [],
+      "git": {
+        "hasGit": true,
+        "dirty": true,
+        "status": "## main |  M config/settings.json |  M config/source-catalog.json | ?? .project-orchestrator.json | ?? 00_Document_CV/ | ?? AUDIT_ARCHITECTURE.json | ?? AUDIT_ARCHITECTURE.md | ?? AUDIT_NETTOYAGE.json | ?? AUDIT_NETTOYAGE.md | ?? AUDIT_OPTIMISATION.json | ?? AUDIT_OPTIMISATION.md | ?? AUDIT_SECURITE.json | ?? AUDIT_SECURITE.md | ?? CHANGELOG_FR.md | ?? FICHE_PROJET.md | ?? INSTALLATION_FR.md | ?? PREPARATION_GITHUB.json | ?? PREPARATION_GITHUB.md | ?? RAPPORT_FONCTIONNALITE.json | ?? RAPPORT_FONCTIONNALITE.md | ?? RAPPORT_REPARATION_FONCTIONNALITE.json | ?? RAPPORT_REPARATION_FONCTIONNALITE.md | ?? public/ | ?? settings-coordonnees.png"
+      },
+      "fileSummary": {
+        "scannedFiles": 4995,
+        "skippedDirectories": [
+          ".git",
+          ".playwright-mcp",
+          "career-ops/.git",
+          "career-ops/node_modules",
+          "_services/searxng/.venv/Lib/site-packages/pip/_internal/operations/build"
+        ],
+        "truncated": true,
+        "extensionCounts": {
+          "(none)": 195,
+          ".json": 751,
+          ".md": 427,
+          ".html": 20,
+          ".pdf": 18,
+          ".png": 3,
+          ".log": 160,
+          ".typ": 14,
+          ".yaml": 2,
+          ".example": 1,
+          ".yml": 19,
+          ".mjs": 26,
+          ".sh": 1,
+          ".cff": 1,
+          ".tmp": 1,
+          ".corrupt-2026-06-17t22-41-34-958z": 1,
+          ".mod": 1,
+          ".sum": 1,
+          ".go": 12,
+          ".gif": 1,
+          ".jpg": 4,
+          ".svg": 5,
+          ".lock": 1,
+          ".nix": 1,
+          ".woff2": 4,
+          ".js": 3,
+          ".tex": 1,
+          ".txt": 46,
+          ".css": 1,
+          ".py": 1076,
+          ".typed": 37,
+          ".pyc": 845,
+          ".dat": 1084,
+          ".unicode": 1,
+          ".pem": 2,
+          ".gz": 1,
+          ".pth": 1,
+          ".pxi": 26,
+          ".pyd": 9,
+          ".h": 136,
+          ".pyx": 2,
+          ".pxd": 16,
+          ".rng": 1,
+          ".xsl": 7,
+          ".markdown-it": 1,
+          ".c": 1,
+          ".pyi": 6,
+          ".apache": 3,
+          ".bsd": 3,
+          ".exe": 6,
+          ".rst": 1,
+          ".cmake": 8,
+          ".pc": 1
+        }
+      },
+      "directoryMtime": "2026-06-18T00:05:22.332Z",
+      "scannedAt": "2026-06-18T20:19:32.291Z"
+    }
+  ],
+  "diff": {
+    "baseline": true,
+    "newProjects": [],
+    "removedProjects": [],
+    "movedProjects": [],
+    "unregisteredProjects": []
+  },
+  "latestArchivePath": "D:/00_Cerveau_IA/Projet/00_ORCHESTRATEUR/archives/project-inventory/2026-06-18_22-19-33-projects.json"
+}

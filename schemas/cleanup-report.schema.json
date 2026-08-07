@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CleanupReport",
+  "type": "object",
+  "required": ["generatedAt", "mode", "projects"],
+  "properties": {
+    "generatedAt": { "type": "string" },
+    "mode": { "enum": ["dry-run", "apply"] },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "type": "string" },
+          "status": { "type": "string" },
+          "candidates": { "type": "array" },
+          "archived": { "type": "array" }
+        }
+      }
+    }
+  }
+}

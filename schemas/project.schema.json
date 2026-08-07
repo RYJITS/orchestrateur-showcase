@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cerveau IA Project",
+  "type": "object",
+  "required": ["id", "name", "path", "status", "securityStatus", "functionalityStatus", "publicationStatus"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "path": { "type": "string" },
+    "category": { "type": "string" },
+    "status": {
+      "enum": ["PUBLIC_READY", "PUBLIC_CANDIDATE", "PRIVATE_INTERNAL", "SENSITIVE_BLOCKED", "ARCHIVE_ONLY", "NEEDS_REPAIR", "NEEDS_DOCUMENTATION"]
+    },
+    "securityStatus": {
+      "enum": ["OK_PUBLIC", "OK_PRIVATE", "FAIL_SECRETS", "FAIL_SESSIONS", "UNKNOWN", "KNOWN_REPORT"]
+    },
+    "functionalityStatus": {
+      "enum": ["FONCTIONNEL", "FONCTIONNEL_AVEC_ALERTES", "NON_TESTABLE_MANQUE_INFO", "NON_FONCTIONNEL_REPARABLE", "NON_FONCTIONNEL_BLOQUE", "ARCHIVE_READ_ONLY", "UNKNOWN", "KNOWN_REPORT"]
+    },
+    "publicationStatus": {
+      "enum": ["PUBLIC_READY", "PUBLIC_CANDIDATE", "PRIVATE_INTERNAL", "SENSITIVE_BLOCKED", "ARCHIVE_ONLY", "NEEDS_DOCUMENTATION"]
+    },
+    "stack": { "type": "array", "items": { "type": "string" } },
+    "scripts": { "type": "array", "items": { "type": "string" } },
+    "links": { "type": "object" },
+    "reports": { "type": "object" }
+  }
+}

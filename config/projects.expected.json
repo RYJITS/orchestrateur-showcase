@@ -1,0 +1,96 @@
+{
+  "source": "Plan Corrige - Orchestrateur Global + Site Ma Methode Hub",
+  "root": "D:/00_Cerveau_IA/Projet",
+  "additionalDiskProjectsPolicy": "INDEX_AND_REPORT",
+  "missingProjectPolicy": "WARN_AND_DO_NOT_CREATE_PLACEHOLDER",
+  "projects": [
+    {
+      "name": "89_cerveau_ia_local",
+      "role": "private-root",
+      "notes": "Representation projet de la racine D:/00_Cerveau_IA. Ne deplace pas les dossiers Conpetances, Instructions, Memoire, API ou Projet."
+    },
+    {
+      "name": "00_ORCHESTRATEUR",
+      "role": "orchestrator"
+    },
+    {
+      "name": "01_NAS",
+      "role": "private"
+    },
+    {
+      "name": "01_SITE_MA_METHODE",
+      "role": "hub"
+    },
+    {
+      "name": "03_codex-mistral-subagent-skill",
+      "role": "project"
+    },
+    {
+      "name": "05_Generateur image C2R",
+      "role": "project"
+    },
+    {
+      "name": "05_skyia",
+      "role": "project"
+    },
+    {
+      "name": "10_garden-inn",
+      "role": "project"
+    },
+    {
+      "name": "10_harmos-calc",
+      "role": "project"
+    },
+    {
+      "name": "20_chess-3d-ultimate",
+      "role": "project"
+    },
+    {
+      "name": "20_jeu3d",
+      "role": "project"
+    },
+    {
+      "name": "20_morphostyle",
+      "role": "project"
+    },
+    {
+      "name": "Competance_Recherche_emploie",
+      "role": "sensitive-private",
+      "notes": "Projet Git avec modifications existantes; toute action doit rester prudente."
+    },
+    {
+      "name": "skyia_-judgment-protocol-27.11.2025",
+      "role": "alias-covered",
+      "aliasPolicy": "COVERED_BY_EXISTING_PROJECTS",
+      "coveredBy": ["05_skyia", "05_Orbe_skyia"],
+      "identityEvidence": [
+        {
+          "project": "05_skyia",
+          "file": "package.json",
+          "contains": "skyia:-judgment-protocol-27.11.2025"
+        },
+        {
+          "project": "05_skyia",
+          "file": "metadata.json",
+          "contains": "Skyia: Judgment Protocol 27.11.2025"
+        },
+        {
+          "project": "05_Orbe_skyia",
+          "file": "package.json",
+          "contains": "skyia:-judgment-protocol-27.11.2025"
+        },
+        {
+          "project": "05_Orbe_skyia",
+          "file": "metadata.json",
+          "contains": "Skyia: Judgment Protocol 27.11.2025"
+        }
+      ],
+      "notes": "Cite dans le plan utilisateur comme nom de projet; couvert par les dossiers racine actuels 05_skyia et 05_Orbe_skyia qui portent ce nom dans package.json/metadata.json."
+    },
+    {
+      "name": "99_Archive",
+      "role": "archive-only",
+      "archiveOnly": true
+    }
+  ]
+}

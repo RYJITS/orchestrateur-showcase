@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BackupReport",
+  "type": "object",
+  "required": ["generatedAt", "results"],
+  "properties": {
+    "generatedAt": { "type": "string" },
+    "action": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "project": { "type": "object" },
+          "git": { "type": "object" },
+          "backupRoot": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

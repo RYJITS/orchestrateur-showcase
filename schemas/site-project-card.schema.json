@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Site Ma Methode Project Card",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "name",
+    "comment",
+    "image",
+    "localPath",
+    "stack",
+    "status",
+    "highlights",
+    "functions",
+    "screenshots"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "enum": ["tools", "design", "ai"]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "comment": {
+      "type": "string",
+      "minLength": 1
+    },
+    "image": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string"
+    },
+    "githubUrl": {
+      "type": "string"
+    },
+    "hostingerUrl": {
+      "type": "string"
+    },
+    "ficheUrl": {
+      "type": "string"
+    },
+    "localPath": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "status": {
+      "type": "object",
+      "required": ["global", "security", "functionality", "publication"],
+      "properties": {
+        "global": {
+          "enum": ["PUBLIC_READY", "PUBLIC_CANDIDATE", "PRIVATE_INTERNAL", "SENSITIVE_BLOCKED", "ARCHIVE_ONLY", "NEEDS_REPAIR", "NEEDS_DOCUMENTATION"]
+        },
+        "security": {
+          "enum": ["OK_PUBLIC", "OK_PRIVATE", "FAIL_SECRETS", "FAIL_SESSIONS", "UNKNOWN", "KNOWN_REPORT"]
+        },
+        "functionality": {
+          "enum": ["FONCTIONNEL", "FONCTIONNEL_AVEC_ALERTES", "NON_TESTABLE_MANQUE_INFO", "NON_FONCTIONNEL_REPARABLE", "NON_FONCTIONNEL_BLOQUE", "ARCHIVE_READ_ONLY", "UNKNOWN", "KNOWN_REPORT"]
+        },
+        "publication": {
+          "enum": ["PUBLIC_READY", "PUBLIC_CANDIDATE", "PRIVATE_INTERNAL", "SENSITIVE_BLOCKED", "ARCHIVE_ONLY", "NEEDS_DOCUMENTATION"]
+        }
+      }
+    },
+    "highlights": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "functions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "screenshots": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mediaPolicy": {
+      "type": "object",
+      "properties": {
+        "exposure": {
+          "enum": ["none", "publication-ready", "safe-reviewed-captures"]
+        },
+        "publicationAllowed": {
+          "type": "boolean"
+        },
+        "screenshotStatus": {
+          "type": "string"
+        },
+        "publicScreenshotReview": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

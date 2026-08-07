@@ -1,0 +1,29 @@
+{
+  "mode": "touched-files-first",
+  "excludeDirectories": [
+    "node_modules",
+    ".git",
+    "dist",
+    "build",
+    ".next",
+    "out",
+    ".cache",
+    "coverage",
+    "output",
+    "backups",
+    "archives",
+    "reports"
+  ],
+  "excludeExtensions": [
+    ".zip",
+    ".mp4",
+    ".mov",
+    ".avi"
+  ],
+  "fullBackup": {
+    "maxFiles": 5000,
+    "maxTotalBytes": 524288000,
+    "createZip": true,
+    "removeStagingAfterZip": true
+  }
+}

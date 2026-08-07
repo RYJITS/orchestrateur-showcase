@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SubagentTask",
+  "type": "object",
+  "required": ["id", "createdAt", "agent", "task", "mode", "context", "constraints", "expectedOutput"],
+  "properties": {
+    "id": { "type": "string" },
+    "createdAt": { "type": "string" },
+    "agent": { "enum": ["mistral", "qwen", "manual"] },
+    "mode": { "enum": ["dry-run", "analysis-only"] },
+    "project": { "type": ["string", "null"] },
+    "task": { "type": "string" },
+    "context": {
+      "type": "object",
+      "required": ["source", "noDirectExecution", "noDirectWrite", "noSecrets", "outputDirectory"],
+      "properties": {
+        "source": { "type": "string" },
+        "noDirectExecution": { "const": true },
+        "noDirectWrite": { "const": true },
+        "noSecrets": { "const": true },
+        "outputDirectory": { "const": "reports/subagents" }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "required": ["analysisOnly", "noDirectWrite", "noSecrets", "noPublication", "noApiCallWithoutExplicitApproval"],
+      "properties": {
+        "analysisOnly": { "const": true },
+        "noDirectWrite": { "const": true },
+        "noSecrets": { "const": true },
+        "noPublication": { "const": true },
+        "noApiCallWithoutExplicitApproval": { "const": true }
+      }
+    },
+    "expectedOutput": {
+      "type": "object",
+      "required": ["summary", "risks", "recommendations", "proposedFiles", "tests"],
+      "properties": {
+        "summary": { "type": "string" },
+        "risks": { "type": "array" },
+        "recommendations": { "type": "array" },
+        "proposedFiles": { "type": "array" },
+        "tests": { "type": "array" }
+      }
+    }
+  }
+}

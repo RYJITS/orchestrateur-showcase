@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProjectCard",
+  "type": "object",
+  "required": ["id", "name", "category", "comment", "status"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "category": { "type": "string" },
+    "comment": { "type": "string" },
+    "image": { "type": "string" },
+    "ficheUrl": { "type": "string" },
+    "localPath": { "type": "string" },
+    "stack": { "type": "array", "items": { "type": "string" } },
+    "status": {
+      "type": "object",
+      "required": ["global", "security", "functionality", "publication"],
+      "properties": {
+        "global": { "type": "string" },
+        "security": { "type": "string" },
+        "functionality": { "type": "string" },
+        "publication": { "type": "string" }
+      }
+    },
+    "screenshots": { "type": "array", "items": { "type": "string" } }
+  }
+}

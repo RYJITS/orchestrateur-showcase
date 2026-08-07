@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#070707">
+    <title>Orchestrateur Cerveau IA</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23070707'/%3E%3Cpath d='M16 34h32M32 16v32' stroke='%2322c55e' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%2338bdf8'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <svg class="symbols" aria-hidden="true">
+      <symbol id="icon-refresh" viewBox="0 0 24 24">
+        <path d="M21 12a9 9 0 0 1-15.7 6"></path>
+        <path d="M3 12a9 9 0 0 1 15.7-6"></path>
+        <path d="M6 18H3v3"></path>
+        <path d="M18 6h3V3"></path>
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 3 20 6v6c0 5-3.4 8.4-8 9-4.6-.6-8-4-8-9V6l8-3Z"></path>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="m5 13 4 4L19 7"></path>
+      </symbol>
+      <symbol id="icon-folder" viewBox="0 0 24 24">
+        <path d="M3 7h7l2 2h9v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"></path>
+      </symbol>
+      <symbol id="icon-file" viewBox="0 0 24 24">
+        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"></path>
+        <path d="M14 3v5h5"></path>
+      </symbol>
+      <symbol id="icon-play" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7-11-7Z"></path>
+      </symbol>
+      <symbol id="icon-link" viewBox="0 0 24 24">
+        <path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path>
+        <path d="M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1"></path>
+      </symbol>
+    </svg>
+
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Cerveau IA</p>
+          <h1>Orchestrateur projets</h1>
+        </div>
+        <div class="topbar-actions">
+          <label class="select-field topbar-executor">
+            <span>Executeur</span>
+            <select id="global-executor"></select>
+          </label>
+          <button class="command-button" data-action="scan" type="button">
+            <svg><use href="#icon-refresh"></use></svg>
+            <span>Scan</span>
+          </button>
+          <button class="command-button command-button-strong" data-action="site" type="button">
+            <svg><use href="#icon-link"></use></svg>
+            <span>Sync hub</span>
+          </button>
+          <button class="command-button" data-action="siteCheck" type="button">
+            <svg><use href="#icon-check"></use></svg>
+            <span>Check hub</span>
+          </button>
+        </div>
+      </header>
+
+      <section class="status-grid" aria-label="Statuts globaux">
+        <article class="metric metric-total">
+          <span>Total</span>
+          <strong id="metric-total">0</strong>
+        </article>
+        <article class="metric metric-public">
+          <span>Public</span>
+          <strong id="metric-public">0</strong>
+        </article>
+        <article class="metric metric-blocked">
+          <span>Bloques</span>
+          <strong id="metric-blocked">0</strong>
+        </article>
+        <article class="metric metric-private">
+          <span>Prives</span>
+          <strong id="metric-private">0</strong>
+        </article>
+      </section>
+
+      <section class="tasks-panel" aria-label="Plan de taches orchestrateur">
+        <div class="task-toolbar">
+          <div>
+            <p class="eyebrow">Plan de travail</p>
+            <h2>Taches, responsables et frequences</h2>
+            <p id="task-count">0 tache</p>
+          </div>
+          <div class="task-filters">
+            <label class="select-field">
+              <span>Frequence</span>
+              <select id="task-cadence-filter"></select>
+            </label>
+            <label class="select-field">
+              <span>Responsable</span>
+              <select id="task-owner-filter"></select>
+            </label>
+          </div>
+        </div>
+
+        <div class="task-summary" id="task-summary"></div>
+
+        <div class="task-editors">
+          <form id="task-form" class="task-form">
+            <h3>Ajouter une tache</h3>
+            <input id="task-title-input" name="title" type="text" placeholder="Nom de la tache" required>
+            <input id="task-when-input" name="when" type="text" placeholder="Quand">
+            <select id="task-owner-input" name="owner"></select>
+            <select id="task-cadence-input" name="cadence"></select>
+            <select id="task-executor-input" name="executor"></select>
+            <button class="small-button" type="submit">
+              <svg><use href="#icon-check"></use></svg>
+              <span>Ajouter</span>
+            </button>
+          </form>
+
+          <form id="subtask-form" class="task-form">
+            <h3>Ajouter une sous-tache</h3>
+            <select id="subtask-parent-input" name="parentId"></select>
+            <input id="subtask-title-input" name="title" type="text" placeholder="Nom de la sous-tache" required>
+            <input id="subtask-when-input" name="when" type="text" placeholder="Quand">
+            <select id="subtask-owner-input" name="owner"></select>
+            <select id="subtask-cadence-input" name="cadence"></select>
+            <select id="subtask-executor-input" name="executor"></select>
+            <button class="small-button" type="submit">
+              <svg><use href="#icon-check"></use></svg>
+              <span>Ajouter</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="table-wrap task-table-wrap">
+          <table class="task-table">
+            <thead>
+              <tr>
+                <th>Tache</th>
+                <th>Frequence</th>
+                <th>Responsable</th>
+                <th>Applique sur</th>
+                <th>Commande</th>
+                <th>Garde-fous</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="task-table"></tbody>
+          </table>
+        </div>
+
+        <section class="task-store-panel">
+          <div class="store-head">
+            <div>
+              <h3>Store taches</h3>
+              <p id="store-count">0 disponible</p>
+            </div>
+            <span class="badge badge-private">installable</span>
+          </div>
+          <div id="task-store-list" class="task-store-list"></div>
+        </section>
+      </section>
+
+      <section class="workspace">
+        <aside class="control-panel" aria-label="Actions orchestrateur">
+          <div class="panel-head">
+            <h2>Routines</h2>
+            <p id="registry-date">-</p>
+          </div>
+          <div class="routine-grid">
+            <button class="action-tile" data-action="daily" type="button">
+              <svg><use href="#icon-play"></use></svg>
+              <span>Jour</span>
+            </button>
+            <button class="action-tile" data-action="weekly" type="button">
+              <svg><use href="#icon-play"></use></svg>
+              <span>Semaine</span>
+            </button>
+            <button class="action-tile" data-action="monthly" type="button">
+              <svg><use href="#icon-play"></use></svg>
+              <span>Mois</span>
+            </button>
+          </div>
+
+          <div class="action-list" aria-label="Actions globales">
+            <button data-action="security" type="button"><svg><use href="#icon-shield"></use></svg><span>Securite</span></button>
+            <button data-action="registry" type="button"><svg><use href="#icon-check"></use></svg><span>Registre</span></button>
+            <button data-action="statusCheck" type="button"><svg><use href="#icon-check"></use></svg><span>Statuts</span></button>
+            <button data-action="expectedCheck" type="button"><svg><use href="#icon-check"></use></svg><span>Attendus</span></button>
+            <button data-action="planCoverage" type="button"><svg><use href="#icon-check"></use></svg><span>Plan</span></button>
+            <button data-action="siteCheck" type="button"><svg><use href="#icon-check"></use></svg><span>Hub check</span></button>
+            <button data-action="siteRenderCheck" type="button"><svg><use href="#icon-check"></use></svg><span>Hub rendu</span></button>
+            <button data-action="initial" type="button"><svg><use href="#icon-file"></use></svg><span>Audit initial</span></button>
+            <button data-action="git" type="button"><svg><use href="#icon-link"></use></svg><span>Git changes</span></button>
+            <button data-action="gitGuard" type="button"><svg><use href="#icon-shield"></use></svg><span>Git guard</span></button>
+            <button data-action="safetyCheck" type="button"><svg><use href="#icon-shield"></use></svg><span>Safety</span></button>
+            <button data-action="architecture" type="button"><svg><use href="#icon-file"></use></svg><span>Architecture</span></button>
+            <button data-action="optimization" type="button"><svg><use href="#icon-check"></use></svg><span>Optimisation</span></button>
+            <button data-action="cleanup" type="button"><svg><use href="#icon-file"></use></svg><span>Nettoyage</span></button>
+            <button data-action="archive" type="button"><svg><use href="#icon-folder"></use></svg><span>Archive dry</span></button>
+            <button data-action="functionality" type="button"><svg><use href="#icon-check"></use></svg><span>Fonctionnement</span></button>
+            <button data-action="repair" type="button"><svg><use href="#icon-check"></use></svg><span>Reparation</span></button>
+            <button data-action="fiches" type="button"><svg><use href="#icon-file"></use></svg><span>Fiches</span></button>
+            <button data-action="docsCheck" type="button"><svg><use href="#icon-check"></use></svg><span>Docs check</span></button>
+            <button data-action="screenshots" type="button"><svg><use href="#icon-file"></use></svg><span>Captures</span></button>
+            <button data-action="backup" type="button"><svg><use href="#icon-folder"></use></svg><span>Backup</span></button>
+            <button data-action="skills" type="button"><svg><use href="#icon-refresh"></use></svg><span>Skills</span></button>
+            <button data-action="github" type="button"><svg><use href="#icon-link"></use></svg><span>GitHub dry</span></button>
+            <button data-action="publication" type="button"><svg><use href="#icon-shield"></use></svg><span>Publication</span></button>
+            <button data-action="hostinger" type="button"><svg><use href="#icon-shield"></use></svg><span>Hostinger</span></button>
+            <button data-action="subagentsCheck" type="button"><svg><use href="#icon-shield"></use></svg><span>Subagents</span></button>
+            <button data-action="githubSync" type="button"><svg><use href="#icon-link"></use></svg><span>GitHub sync</span></button>
+            <button data-action="memoryCentral" type="button"><svg><use href="#icon-refresh"></use></svg><span>Memoire globale</span></button>
+            <button data-action="memoryProject" type="button"><svg><use href="#icon-refresh"></use></svg><span>Memoire projets</span></button>
+          </div>
+
+          <section class="run-output" aria-live="polite">
+            <div>
+              <h2>Execution</h2>
+              <span id="run-status">Pret</span>
+            </div>
+            <pre id="run-log"></pre>
+          </section>
+        </aside>
+
+        <section class="project-panel">
+          <div class="project-toolbar">
+            <div>
+              <h2>Projets</h2>
+              <p id="project-count">0 projet</p>
+            </div>
+            <label class="search-field">
+              <span>Filtre</span>
+              <input id="project-search" type="search" autocomplete="off">
+            </label>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Projet</th>
+                  <th>Statut</th>
+                  <th>Securite</th>
+                  <th>Fonction</th>
+                  <th>Git</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="project-table"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="reports-panel">
+        <div class="panel-head">
+          <h2>Rapports recents</h2>
+          <button id="refresh-reports" class="small-button" type="button">
+            <svg><use href="#icon-refresh"></use></svg>
+            <span>Actualiser</span>
+          </button>
+        </div>
+        <div id="reports-list" class="reports-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

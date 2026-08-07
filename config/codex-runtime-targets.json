@@ -1,0 +1,12 @@
+{
+  "globalTargets": [
+    "C:/Users/ysche/.agents/skills",
+    "C:/Users/ysche/.codex/skills"
+  ],
+  "projectTargets": [
+    "D:/00_Cerveau_IA/Projet/00_ORCHESTRATEUR/.agents/skills",
+    "D:/00_Cerveau_IA/Projet/01_SITE_MA_METHODE/.agents/skills"
+  ],
+  "syncAgentsMd": true,
+  "syncMode": "copy-from-source-master"
+}

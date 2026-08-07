@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AuditReport",
+  "type": "object",
+  "required": ["generatedAt", "scope", "status", "findings"],
+  "properties": {
+    "generatedAt": { "type": "string" },
+    "scope": { "type": "string" },
+    "status": { "type": "string" },
+    "project": { "type": "string" },
+    "findings": { "type": "array", "items": { "type": "object" } },
+    "actions": { "type": "array", "items": { "type": "string" } }
+  }
+}

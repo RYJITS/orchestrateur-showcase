@@ -1,0 +1,18 @@
+{
+  "dryRunOnlyByDefault": true,
+  "archiveInsteadOfDelete": true,
+  "sureArchiveDirectories": [
+    "node_modules",
+    ".cache",
+    "dist",
+    "build",
+    ".next",
+    "out",
+    "coverage"
+  ],
+  "probableArchiveExtensions": [
+    ".log",
+    ".tmp"
+  ],
+  "largeFileBytes": 52428800
+}

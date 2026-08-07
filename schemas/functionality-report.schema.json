@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FunctionalityReport",
+  "type": "object",
+  "required": ["generatedAt", "results"],
+  "properties": {
+    "generatedAt": { "type": "string" },
+    "mode": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["project", "status"],
+        "properties": {
+          "project": { "type": "object" },
+          "status": { "type": "string" },
+          "checks": { "type": "array" },
+          "commands": { "type": "array" },
+          "checkScripts": { "type": "array", "items": { "type": "string" } },
+          "launchScripts": { "type": "array", "items": { "type": "string" } },
+          "recommendation": { "type": ["string", "null"] },
+          "actions": { "type": "array" }
+        }
+      }
+    }
+  }
+}

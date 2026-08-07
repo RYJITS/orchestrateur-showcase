@@ -1,0 +1,25 @@
+{
+  "defaultMode": "dry-run",
+  "requiredPublicationTool": "MCP Hostinger",
+  "siteMaMethodeDomain": "cv.c2rdesign.com",
+  "allowedSecurityStatus": ["OK_PUBLIC"],
+  "blockedProjectStatus": ["SENSITIVE_BLOCKED", "PRIVATE_INTERNAL", "ARCHIVE_ONLY", "NEEDS_REPAIR"],
+  "blockedPublicationStatus": ["PRIVATE_INTERNAL", "ARCHIVE_ONLY"],
+  "forbiddenRawCredentialPatterns": [
+    "Hostinger_API_KEY",
+    "HOSTINGER_API_KEY",
+    "hostinger_api_key"
+  ],
+  "forbiddenAutoDeployPatterns": [
+    "hostinger:bundle",
+    "create-deploy-bundle.ps1",
+    "ftp",
+    "sftp",
+    "ssh2",
+    "deploy --hostinger"
+  ],
+  "notes": [
+    "V1 ne deploie rien automatiquement.",
+    "Toute action Hostinger reelle doit passer par le MCP Hostinger avec validation humaine."
+  ]
+}

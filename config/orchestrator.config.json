@@ -1,0 +1,21 @@
+{
+  "name": "00_ORCHESTRATEUR",
+  "version": "1.0.0",
+  "projectsRoot": "../",
+  "siteProject": "../01_SITE_MA_METHODE",
+  "archiveProject": "../99_Archive",
+  "defaultMode": "dry-run",
+  "rules": {
+    "scanBeforeChange": true,
+    "backupBeforeApply": true,
+    "neverDeleteDirectly": true,
+    "neverPublishWithoutSecurityOk": true,
+    "archiveReadOnlyByDefault": true
+  },
+  "memory": {
+    "centralRoot": "../../",
+    "competencesDir": "../../Conpetances",
+    "recordAfterUsefulChange": true,
+    "updateIndexesAfterRecord": true
+  }
+}

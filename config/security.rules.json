@@ -1,0 +1,53 @@
+{
+  "blockedFileNames": [
+    ".env",
+    ".env.local",
+    "env.local",
+    "env.Local",
+    "id_rsa",
+    "id_ed25519"
+  ],
+  "blockedDirectoryFragments": [
+    ".whatsapp-web-profile",
+    ".whatsapp-web-chrome-profile",
+    "baileys-auth",
+    "session",
+    "sessions",
+    "auth"
+  ],
+  "generatedPrivateSkipDirs": [
+    "output",
+    "_deploy",
+    "_archive",
+    "archives",
+    "backups",
+    "backup",
+    "reports",
+    "logs",
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".playwright-cli",
+    ".playwright-mcp",
+    "_tmp",
+    "searxng-src"
+  ],
+  "secretTerms": [
+    "api_key",
+    "apikey",
+    "token",
+    "secret",
+    "password",
+    "private_key",
+    "bearer"
+  ],
+  "publicBlockedExtensions": [
+    ".pem",
+    ".key",
+    ".p12",
+    ".pfx"
+  ],
+  "maxTextScanBytes": 1048576
+}

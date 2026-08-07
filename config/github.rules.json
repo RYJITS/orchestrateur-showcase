@@ -1,0 +1,218 @@
+{
+  "defaultMode": "dry-run",
+  "allowedSecurityStatus": ["OK_PUBLIC"],
+  "allowedPrivateSharingSecurityStatus": ["OK_PUBLIC", "OK_PRIVATE"],
+  "blockedPublicationStatus": ["PRIVATE_INTERNAL", "ARCHIVE_ONLY"],
+  "requiredFiles": [
+    "FICHE_PROJET.md",
+    "INSTALLATION_FR.md",
+    "CHANGELOG_FR.md",
+    ".env.example",
+    ".gitignore"
+  ],
+  "gitOnlyPublication": {
+    "principle": "Pour GitHub, juger les fichiers suivis par Git et l'historique, pas tout le dossier local.",
+    "requiredGitignoreGroups": [
+      {
+        "label": "env",
+        "patterns": [".env", ".env*", ".env.local", "!.env.example"]
+      },
+      {
+        "label": "node_modules",
+        "patterns": ["node_modules", "node_modules/"]
+      },
+      {
+        "label": "sessions",
+        "patterns": ["session", "sessions", "baileys-auth", ".whatsapp-web-profile", ".whatsapp-web-chrome-profile"]
+      },
+      {
+        "label": "logs",
+        "patterns": ["*.log", "logs", "logs/"]
+      },
+      {
+        "label": "private-keys",
+        "patterns": ["*.pem", "*.key", "*.p12", "*.pfx"]
+      },
+      {
+        "label": "orchestrator-generated",
+        "patterns": [
+          ".project-orchestrator.json",
+          "metadata.json",
+          "AUDIT_*.json",
+          "AUDIT_*.md",
+          "RAPPORT_*.json",
+          "RAPPORT_*.md",
+          "PREPARATION_GITHUB*.json",
+          "PREPARATION_GITHUB*.md",
+          "docs/captures/",
+          "captures/"
+        ]
+      }
+    ],
+    "blockedPathFragments": [
+      "session",
+      "sessions",
+      "baileys-auth",
+      ".whatsapp-web-profile",
+      ".whatsapp-web-chrome-profile",
+      "cookies"
+    ],
+    "blockedExtensions": [".pem", ".key", ".p12", ".pfx"],
+    "reviewExtensions": [".xlsx", ".xls", ".csv", ".sqlite", ".db", ".zip", ".7z", ".rar"],
+    "requiredPublicFiles": [".gitignore", ".env.example", "README.md"]
+  },
+  "publicRepositoryGenerator": {
+    "principle": "Un depot public GitHub doit etre public, contenir un README.md visible sur GitHub avec rapport complet: concept, fonctions de l'application, actualisations, options de conception, outils utilises, installation, lancement et captures du projet. Il doit contenir uniquement ce qui permet de comprendre, installer et lancer le projet localement sans secret ni sortie locale inutile. Si le projet est une application lancable, les captures GitHub doivent etre prises automatiquement en ouvrant l'application.",
+    "requiredReadmeSections": [
+      "Demarrage rapide",
+      "Installation locale",
+      "Lancement",
+      "Utilisation"
+    ],
+    "maxPublicFileBytes": 10485760,
+    "requiredPublicFiles": [".gitignore", "README.md"],
+    "includePrinciples": [
+      "README.md public avec rapport complet: concept, fonctions, actualisations, options de conception, outils, installation et lancement",
+      "captures d'ecran publiques prises automatiquement en ouvrant l'application quand elle est lancable, puis placees dans docs/github-captures/",
+      "manifestes de dependances et lockfiles",
+      "code source necessaire au lancement local",
+      "assets publics utiles a l'application",
+      "exemples de configuration sans secret"
+    ],
+    "excludePrinciples": [
+      "secrets et fichiers .env reels",
+      "node_modules, builds, caches et sorties generees",
+      "rapports d'audit et preparations internes de l'orchestrateur",
+      "sessions, cookies et profils navigateur",
+      "archives, backups, logs et donnees personnelles",
+      "cles privees et bases locales non anonymisees"
+    ],
+    "excludeDirectories": [
+      ".git",
+      "node_modules",
+      "dist",
+      "build",
+      "out",
+      ".next",
+      ".nuxt",
+      ".cache",
+      ".playwright-cli",
+      ".playwright-mcp",
+      "coverage",
+      "logs",
+      "sessions",
+      "session",
+      "baileys-auth",
+      "backups",
+      "backup",
+      "archives",
+      "reports",
+      "automatisations/99_Resultats",
+      "workflow_app/data",
+      "__pycache__",
+      ".pytest_cache",
+      ".mypy_cache",
+      ".venv",
+      "venv",
+      "_tmp",
+      "searxng-src",
+      "_archive",
+      "_deploy",
+      "output",
+      "99_Archive"
+    ],
+    "excludePathFragments": [
+      ".whatsapp-web-profile",
+      ".whatsapp-web-chrome-profile",
+      "cookies",
+      "env.local",
+      "secrets",
+      "private",
+      "runtime/jobs",
+      "runtime/outputs",
+      "public/generated/videos/",
+      "docs/daily-tests/evidence/",
+      "docs/captures/",
+      "captures/",
+      "preparation_github",
+      "rapport_fonctionnalite",
+      "rapport_reparation_fonctionnalite",
+      "audit_securite",
+      "audit_architecture",
+      "audit_nettoyage",
+      "audit_optimisation"
+    ],
+    "excludeFileNames": [
+      ".env",
+      ".env.local",
+      "env.local",
+      "env.Local",
+      "id_rsa",
+      "id_ed25519",
+      ".project-orchestrator.json",
+      "metadata.json"
+    ],
+    "excludeExtensions": [".pem", ".key", ".p12", ".pfx", ".zip", ".7z", ".rar", ".bak", ".pyc"],
+    "reviewExtensions": [".xlsx", ".xls", ".csv", ".sqlite", ".db"],
+    "reviewPathFragments": ["data/", "database/", "exports/", "uploads/", "captures-privees/"],
+    "aiValidation": {
+      "primary": "mistral",
+      "fallback": "qwen",
+      "mistralDefaultModel": "mistral-small-latest",
+      "qwenDefaultBaseUrl": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+      "qwenDefaultModel": "qwen-plus"
+    }
+  },
+  "privateAndShowcaseRepositoryGenerator": {
+    "principle": "Un projet non public prepare automatiquement deux sorties GitHub: un depot prive interne pour partager le travail sans secrets, et un depot vitrine public nettoye, installable localement quand le projet le permet.",
+    "privateRepositorySuffix": "-private",
+    "showcaseRepositorySuffix": "-showcase",
+    "privateRepositoryVisibility": "private",
+    "showcaseRepositoryVisibility": "public",
+    "requiredFiles": [".gitignore", "README.md"],
+    "privatePrinciples": [
+      "depot GitHub prive par defaut pour les projets PRIVATE_INTERNAL ou OK_PRIVATE",
+      "aucun .env reel, token, session, log sensible, cle privee ou backup",
+      "README interne avec concept, fonctionnement, fonctions, installation, captures et suivi",
+      "code utile au travail interne quand il passe les filtres de securite"
+    ],
+    "showcasePrinciples": [
+      "vitrine publique nettoyee sans secret",
+      "README public complet avec concept, fonctions, actualisations, outils, installation et captures",
+      "fichiers utiles a une installation locale quand ils sont publics et controles",
+      "aucune donnee personnelle, session, journal sensible ou sortie locale"
+    ],
+    "showcaseSafety": {
+      "maxTextFileBytes": 2097152,
+      "allowedBinaryExtensions": [".gif", ".ico", ".jpeg", ".jpg", ".png", ".svg", ".webp"],
+      "privatePathFragments": ["scripts_yann", "00_document_cv", "info_candidas"],
+      "allowedPublicHosts": [
+        "c2rdesign.com",
+        "docker.com",
+        "docker.io",
+        "example.com",
+        "example.net",
+        "example.org",
+        "github.com",
+        "githubusercontent.com",
+        "hostinger.com",
+        "localhost",
+        "nodejs.org",
+        "npmjs.com",
+        "openai.com",
+        "pypi.org",
+        "python.org"
+      ]
+    }
+  },
+  "forbiddenActionsWithoutExplicitApproval": [
+    "git add .",
+    "git push",
+    "repository visibility public",
+    "delete remote branch"
+  ],
+  "notes": [
+    "V1 prepares reports and README files only.",
+    "No GitHub push is performed by default."
+  ]
+}
